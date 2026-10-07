@@ -1,0 +1,26 @@
+:root{--bg:#f4f5f7;--ink:#1d232b;--mute:#5d6877;--line:#d6dbe2;--card:#fff;--accent:#c4411f;--ok:#1f7a4d;--warn:#a86a00}
+@media (prefers-color-scheme:dark){:root{--bg:#14181d;--ink:#e8ebef;--mute:#9aa5b4;--line:#2c3541;--card:#1c232b;--accent:#ff7a59;--ok:#4cc38a;--warn:#f2b84b}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,Segoe UI,sans-serif}
+main{max-width:980px;margin:0 auto;padding:28px 18px 60px}
+h1{margin:0 0 4px;font-size:2rem}.lead{color:var(--mute);margin:0 0 22px}
+.inputs{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:22px}
+label{display:flex;flex-direction:column;font-weight:600;gap:4px}
+input[type=number]{padding:9px;border:1px solid var(--line);border-radius:6px;background:var(--card);color:var(--ink);font-size:1rem;width:180px}
+.layout{display:grid;grid-template-columns:1fr 300px;gap:24px;align-items:start}
+@media(max-width:760px){.layout{grid-template-columns:1fr}}
+.group h2{font-size:1.05rem;margin:18px 0 8px;color:var(--mute)}
+.part{display:flex;align-items:center;gap:12px;padding:10px 12px;margin-bottom:6px;background:var(--card);border:1px solid var(--line);border-radius:6px;cursor:pointer}
+.part:has(input:checked){border-color:var(--accent)}
+.part input{width:18px;height:18px;accent-color:var(--accent)}
+.part .name{flex:1}.part small{color:var(--mute);display:block}
+.part .price{font-variant-numeric:tabular-nums;font-weight:600}
+aside{position:sticky;top:16px;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:16px}
+aside h2{margin:0 0 10px;font-size:1.1rem}
+dt{color:var(--mute);font-size:.9rem}dd{margin:0 0 10px;font-size:1.3rem;font-weight:700;font-variant-numeric:tabular-nums}
+.bar{height:10px;background:var(--line);border-radius:99px;overflow:hidden}
+#fill{height:100%;width:0;background:var(--ok);transition:width .25s}
+#msgs{padding-left:18px;color:var(--warn);font-size:.92rem}
+#msgs li.bad{color:var(--accent)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+@media(prefers-reduced-motion:reduce){#fill{transition:none}}

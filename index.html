@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Car Mod Calculator & Configurator</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <h1>Car Mod Calculator</h1>
+  <p class="lead">Pick your modifications. See the cost, the power gain and any parts that don't work together.</p>
+
+  <section class="inputs">
+    <label>Stock power (hp)<input id="basehp" type="number" value="100" min="1"></label>
+    <label>Budget (Rs)<input id="budget" type="number" value="150000" min="0" step="5000"></label>
+  </section>
+
+  <div class="layout">
+    <section id="parts" aria-label="Available parts"></section>
+    <aside aria-live="polite">
+      <h2>Your build</h2>
+      <dl>
+        <dt>Total cost</dt><dd id="cost">Rs 0</dd>
+        <dt>Remaining budget</dt><dd id="left">Rs 0</dd>
+        <dt>Power</dt><dd id="power">100 hp</dd>
+        <dt>Handling bonus</dt><dd id="handling">0</dd>
+      </dl>
+      <div class="bar"><div id="fill"></div></div>
+      <ul id="msgs"></ul>
+    </aside>
+  </div>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
